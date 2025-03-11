@@ -18,7 +18,7 @@ router.get('/get-patient-detials/:_id',getPatientDataById);
 router.put('/update-patient-detials/:_id',updatePatientData);
 
 // Router For Delete Patient Details
-router.delete('/delete-patient-detials/:_id',authenCatedToken,deletePatientData);
+router.delete('/delete-patient-detials/:_id',deletePatientData);
 
 
 // Router For Add Docter Details
