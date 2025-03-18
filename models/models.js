@@ -1,13 +1,17 @@
 import mongoose from "mongoose";
 
-const documentSchema = new mongoose.Schema({
+const documentSchema = new mongoose.Schema(
+  {
     aadharCard: { type: String, required: false },
     panCard: { type: String, required: false },
     rationCard: { type: String, required: false },
-    DrivingLicence: { type: String, required: false }
-}, { _id: false });
+    DrivingLicence: { type: String, required: false },
+  },
+  { _id: false }
+);
 
-const personSchema = new mongoose.Schema({
+const personSchema = new mongoose.Schema(
+  {
     aadharNumber: { type: String, required: false },
     age: { type: String, required: false },
     city: { type: String, required: false },
@@ -16,7 +20,7 @@ const personSchema = new mongoose.Schema({
     gender: { type: String, required: false },
     identificationMarks: [{ type: String }],
     maritalStatus: { type: String, required: false },
-    spouseName:{type:String,required:false},
+    spouseName: { type: String, required: false },
     name: { type: String, required: false },
     panNumber: { type: String, required: false },
     permanentAddress: { type: String, required: false },
@@ -24,57 +28,67 @@ const personSchema = new mongoose.Schema({
     rationNumber: { type: String, required: false },
     relationship: { type: String, required: false },
     relationship_with_patient: { type: String, required: false },
-    relationship_with_doner
-: { type: String, required: false },
+    relationship_with_doner: { type: String, required: false },
     relationshipPersonName: { type: String, required: false },
     relationship_with_donerandReceipent: { type: String, required: false },
-}, { _id: false });
-const TamilPerson = new mongoose.Schema({
-    
+  },
+  { _id: false }
+);
+const TamilPerson = new mongoose.Schema(
+  {
     age: { type: String, required: false },
     city: { type: String, required: false },
     dateOfBirth: { type: String, required: false },
     gender: { type: String, required: false },
     identificationMarks: [{ type: String }],
     maritalStatus: { type: String, required: false },
-    spouseName:{type:String,required:false},
+    spouseName: { type: String, required: false },
     name: { type: String, required: false },
     permanentAddress: { type: String, required: false },
     presentAddress: { type: String, required: false },
     relationship: { type: String, required: false },
     relationship_with_donerandReceipent: { type: String, required: false },
-    relationship_with_patient
-: { type: String, required: false },
-    relationship_with_doner
-: { type: String, required: false },
-    relationshipPersonName: { type: String, required: false }
-}, { _id: false });
+    relationship_with_patient: { type: String, required: false },
+    relationship_with_doner: { type: String, required: false },
+    relationshipPersonName: { type: String, required: false },
+  },
+  { _id: false }
+);
 
-const hospitalSchema = new mongoose.Schema({
+const hospitalSchema = new mongoose.Schema(
+  {
     doctorNameMD: { type: String, required: false },
     doctorNameNephrology: { type: String, required: false },
     doctorNameUrology: { type: String, required: false },
-    hospitalName: { type: String, required: false }
-}, { _id: false });
+    hospitalName: { type: String, required: false },
+  },
+  { _id: false }
+);
 
-const languageSchema = new mongoose.Schema({
+const languageSchema = new mongoose.Schema(
+  {
     Doner: personSchema,
     Doner_Dependent: personSchema,
-    Recipient: personSchema
-}, { _id: false });
+    Recipient: personSchema,
+  },
+  { _id: false }
+);
 
-const tamilSchema = new mongoose.Schema({
+const tamilSchema = new mongoose.Schema(
+  {
     Doner: TamilPerson,
     Doner_Dependent: TamilPerson,
-    Recipient: TamilPerson
-}, { _id: false });
+    Recipient: TamilPerson,
+  },
+  { _id: false }
+);
 
 const DataSchema = new mongoose.Schema({
-    Hospital_details: hospitalSchema,
-    English: languageSchema,
-    Tamil: tamilSchema
+  Hospital_details: hospitalSchema,
+  English: languageSchema,
+  Tamil: tamilSchema,
 });
 
-const DataModel = mongoose.model('PatientData', DataSchema);
+const DataModel = mongoose.model("PatientData", DataSchema);
 
 export default DataModel;
