@@ -25,7 +25,8 @@ const personSchema = new mongoose.Schema({
     relationship: { type: String, required: false },
     relationship_with_patient: { type: String, required: false },
     relationship_with_Doner: { type: String, required: false },
-    relationshipPersonName: { type: String, required: false }
+    relationshipPersonName: { type: String, required: false },
+    relationship_with_donerandReceipent: { type: String, required: false },
 }, { _id: false });
 const TamilPerson = new mongoose.Schema({
     
@@ -39,8 +40,8 @@ const TamilPerson = new mongoose.Schema({
     name: { type: String, required: false },
     permanentAddress: { type: String, required: false },
     presentAddress: { type: String, required: false },
-    
     relationship: { type: String, required: false },
+    relationship_with_donerandReceipent: { type: String, required: false },
     relationship_with_patient: { type: String, required: false },
     relationship_with_Doner: { type: String, required: false },
     relationshipPersonName: { type: String, required: false }
