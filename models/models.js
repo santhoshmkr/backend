@@ -34,7 +34,7 @@ const personSchema = new mongoose.Schema(
     relationship_with_donerOther: { type: String, required: false },
     relationshipPersonName: { type: String, required: false },
     relationship_with_donerandReceipent: { type: String, required: false },
-    relationship_with_patientOther: { type: String, required: false },
+    relationship_with_donerandReceipentOther: { type: String, required: false },
   },
   { _id: false }
 );
@@ -52,9 +52,13 @@ const TamilPerson = new mongoose.Schema(
     presentAddress: { type: String, required: false },
     relationship: { type: String, required: false },
     relationship_with_donerandReceipent: { type: String, required: false },
+
     relationship_with_patient: { type: String, required: false },
+    relationship_with_patientOther: { type: String, required: false },
     relationship_with_doner: { type: String, required: false },
+    relationship_with_donerOther: { type: String, required: false },
     relationshipPersonName: { type: String, required: false },
+    relationship_with_donerandReceipentOther: { type: String, required: false },
   },
   { _id: false }
 );
