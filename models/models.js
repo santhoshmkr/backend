@@ -51,8 +51,8 @@ const TamilPerson = new mongoose.Schema(
     permanentAddress: { type: String, required: false },
     presentAddress: { type: String, required: false },
     relationship: { type: String, required: false },
+    relationshipOther: { type: String, required: false },
     relationship_with_donerandReceipent: { type: String, required: false },
-
     relationship_with_patient: { type: String, required: false },
     relationship_with_patientOther: { type: String, required: false },
     relationship_with_doner: { type: String, required: false },
