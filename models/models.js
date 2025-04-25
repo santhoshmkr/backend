@@ -38,6 +38,7 @@ const personSchema = new mongoose.Schema(
   },
   { _id: false }
 );
+
 const TamilPerson = new mongoose.Schema(
   {
     age: { type: String, required: false },
@@ -52,12 +53,12 @@ const TamilPerson = new mongoose.Schema(
     presentAddress: { type: String, required: false },
     relationship: { type: String, required: false },
     relationshipOther: { type: String, required: false },
-    relationship_with_donerandDoner_depandent: { type: String, required: false },
     relationship_with_patient: { type: String, required: false },
     relationship_with_patientOther: { type: String, required: false },
     relationship_with_doner: { type: String, required: false },
     relationship_with_donerOther: { type: String, required: false },
     relationshipPersonName: { type: String, required: false },
+    relationship_with_donerandDoner_depandent: { type: String, required: false },
     relationship_with_donerandDoner_depandentOther: { type: String, required: false },
   },
   { _id: false }
@@ -69,6 +70,7 @@ const hospitalSchema = new mongoose.Schema(
     doctorNameNephrology: { type: String, required: false },
     doctorNameUrology: { type: String, required: false },
     hospitalName: { type: String, required: false },
+    hospitalAddress: { type: String, required: false },
   },
   { _id: false }
 );
@@ -92,7 +94,10 @@ const tamilSchema = new mongoose.Schema(
 );
 
 const DataSchema = new mongoose.Schema({
-  Hospital_details: hospitalSchema,
+  Hospital_details: {
+    tamil: hospitalSchema,
+    english: hospitalSchema
+  },
   English: languageSchema,
   Tamil: tamilSchema,
 });

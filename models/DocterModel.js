@@ -1,11 +1,16 @@
 import mongoose from "mongoose";
 
-
-const DocterSchema = new mongoose.Schema({
+const hospitalSchema = new mongoose.Schema({
     doctorNameMD: String,
     doctorNameNephrology: String,
     doctorNameUrology: String,
-    hospitalName: String
-})
+    hospitalName: String,
+    hospitalAddress: String
+});
 
-export default mongoose.model("Docter", DocterSchema);
+const DoctorSchema = new mongoose.Schema({
+    tamil: hospitalSchema,
+    english: hospitalSchema
+});
+
+export default mongoose.model("Doctor", DoctorSchema);
