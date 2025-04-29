@@ -1,5 +1,5 @@
 import DoctorData from "../models/DocterModel.js"; 
-
+import mongoose from "mongoose";
 export const postDocterform = async (req, res) => {
     try {
         const body = req.body;
