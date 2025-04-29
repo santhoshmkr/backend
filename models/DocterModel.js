@@ -8,9 +8,9 @@ const hospitalSchema = new mongoose.Schema({
     hospitalAddress: String
 });
 
-const DoctorSchema = new mongoose.Schema({
+const DoctorDataSchema = new mongoose.Schema({
     tamil: hospitalSchema,
     english: hospitalSchema
 });
 
-export default mongoose.model("Doctor", DoctorSchema);
+export default mongoose.model("Doctor", DoctorDataSchema);
